@@ -11,12 +11,8 @@ import com.example.todomvvm.R
 import androidx.databinding.DataBindingUtil
 import com.example.todomvvm.databinding.MainFragmentBinding
 
-
 class MainFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding: MainFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false)
         binding.vm = ViewModelProviders.of(this).get(MainViewModel::class.java)
         binding.lifecycleOwner = this
