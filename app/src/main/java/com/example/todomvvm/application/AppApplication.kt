@@ -13,7 +13,6 @@ class AppApplication : Application() {
             androidLogger()
             // declare used Android context
             androidContext(this@AppApplication)
-            // declare modules
             modules(applicationModule)
         }
     }
