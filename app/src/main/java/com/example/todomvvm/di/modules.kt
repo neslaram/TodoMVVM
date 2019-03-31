@@ -1,5 +1,14 @@
 package com.example.todomvvm.di
 
+import com.example.todomvvm.adapter.BaseAdapter
+import com.example.todomvvm.adapter.TypesFactoryImpl
+import com.example.todomvvm.view.main.MainViewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
-val applicationModule = module { }
+val applicationModule = module {
+    viewModel { MainViewModel() }
+    factory { BaseAdapter(typeFactory = get()) }
+    factory { TypesFactoryImpl() }
+
+}

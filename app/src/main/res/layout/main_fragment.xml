@@ -8,37 +8,41 @@
 
         <variable
             name="vm"
-            type="com.example.todomvvm.ui.mainactivity.MainViewModel"
+            type="com.example.todomvvm.view.main.MainViewModel"
             />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.mainactivity.MainFragment"
+        tools:context=".view.main.MainFragment"
         >
 
-        <Button
-            android:id="@+id/addNotesButton"
-            android:layout_width="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notesRecycler"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/dashboard_add_notes"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
-
-        <TextView
-
-            android:id="@+id/message"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{vm.password}"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical"
+            app:data="@{vm.notes}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_note"
             />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/spacing_md"
+            android:src="@drawable/ic_material_add"
+            android:tint="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
