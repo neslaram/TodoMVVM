@@ -7,12 +7,12 @@ import com.example.todomvvm.entities.NoteItem
 
 class MainViewModel : ViewModel() {
 
-    private val _name = MutableLiveData<String>().apply { value = "PCI Screen" }
-    private val _notes = MutableLiveData<List<NoteItem>>().apply { value = mutableListOf(NoteItem(), NoteItem()) }
+    private val _notes = MutableLiveData<MutableList<NoteItem>>().apply { value = mutableListOf() }
+    val notes: LiveData<MutableList<NoteItem>> = _notes
 
-
-    val tyron = MutableLiveData<Int>().apply { value = 100 }
-    val name: LiveData<String> = _name // Expose the immutable version of the LiveData
-    val notes: LiveData<List<NoteItem>> = _notes
-
+    fun addNewItem() {
+        val orEmpty = _notes.value.orEmpty() as MutableList<NoteItem>
+        orEmpty.add(NoteItem())
+        _notes.postValue(orEmpty)
+    }
 }
