@@ -9,6 +9,7 @@ import com.example.todomvvm.entities.BaseDataItem
 import com.example.todomvvm.holder.BaseViewHolder
 import com.example.todomvvm.utils.BindableAdapter
 
+
 @Suppress("UNCHECKED_CAST")
 class BaseAdapter(private val typeFactory: TypesFactoryImpl) : RecyclerView.Adapter<BaseViewHolder<BaseDataItem>>(),
     BindableAdapter<BaseDataItem> {
