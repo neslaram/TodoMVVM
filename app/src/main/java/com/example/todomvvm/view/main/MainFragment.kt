@@ -35,9 +35,11 @@ class MainFragment : Fragment() {
 
     private fun setRecyclerView() {
         context?.let { context ->
-            notesRecycler.adapter = adapter
-            notesRecycler.layoutManager = LinearLayoutManager(context)
-            notesRecycler.addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL))
+            notesRecycler.apply {
+                adapter = this@MainFragment.adapter
+                layoutManager = LinearLayoutManager(context)
+                addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL))
+            }
         }
     }
 }

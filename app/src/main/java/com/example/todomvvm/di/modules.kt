@@ -10,5 +10,6 @@ val applicationModule = module {
     viewModel { MainViewModel() }
     factory { BaseAdapter(typeFactory = get()) }
     factory { TypesFactoryImpl() }
+//    single { Room.databaseBuilder(androidApplication(), AppDatabase::class.java, "app-db").build() }
 
 }

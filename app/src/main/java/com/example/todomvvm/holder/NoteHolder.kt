@@ -1,9 +1,10 @@
 package com.example.todomvvm.holder
 
-import android.view.View
+import com.example.todomvvm.databinding.ItemNoteBinding
 import com.example.todomvvm.entities.NoteItem
 
-class NoteHolder(view: View) : BaseViewHolder<NoteItem>(view) {
+class NoteHolder(private val binding: ItemNoteBinding) : BaseViewHolder<NoteItem>(binding) {
     override fun bind(item: NoteItem) {
+        binding.note = item
     }
 }
