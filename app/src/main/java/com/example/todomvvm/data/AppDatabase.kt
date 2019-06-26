@@ -1,4 +1,4 @@
-package com.example.todomvvm.db
+package com.example.todomvvm.data
 
 //@Database(
 //    version = 1,
