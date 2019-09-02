@@ -9,6 +9,7 @@ import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,10 +19,11 @@ import com.example.todomvvm.databinding.MainFragmentBinding
 import com.example.todomvvm.utils.navigateSafe
 import kotlinx.android.synthetic.main.main_fragment.*
 import org.koin.android.ext.android.inject
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
-    private val viewModel: MainViewModel by viewModel()
+    private val viewModel: MainViewModel by lazy {
+        ViewModelProviders.of(this)[MainViewModel::class.java]
+    }
 
     private val adapter: BaseAdapter by inject()
 
@@ -59,7 +61,8 @@ class MainFragment : Fragment() {
             // Only proceed if the event has never been handled
             it.getContentIfNotHandled()?.let {
                 view?.let { view ->
-                    Navigation.findNavController(view).navigateSafe(R.id.action_mainFragment_to_addNewNoteFragment)
+                    Navigation.findNavController(view)
+                            .navigateSafe(R.id.action_mainFragment_to_addNewNoteFragment)
                 }
             }
         })
