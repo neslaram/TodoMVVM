@@ -6,20 +6,12 @@ apply plugin: 'kotlin-android-extensions'
 apply from: '../dependencies.gradle'
 
 android {
-<<<<<<< HEAD
     compileSdkVersion project.compileSdkVersion
     buildToolsVersion = project.buildToolsVersion
     defaultConfig {
         applicationId "com.example.todomvvm"
         minSdkVersion project.minSdkVersion
         targetSdkVersion project.targetSdkVersion
-=======
-    compileSdkVersion 29
-    defaultConfig {
-        applicationId "com.example.todomvvm"
-        minSdkVersion 21
-        targetSdkVersion 29
->>>>>>> Adds navigation to add a new note
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -38,11 +30,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
-    def koin_version = '2.0.0-rc-1'
-    def room_version = '2.1.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation appDependencies.appCompat
