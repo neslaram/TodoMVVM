@@ -1,54 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
-                name="vm"
-                type="com.example.todomvvm.view.add.AddNewNoteViewModel"/>
+            name="vm"
+            type="com.example.todomvvm.view.add.AddNewNoteViewModel" />
     </data>
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="@dimen/spacing_md"
-            tools:context=".view.add.AddNewNoteFragment">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?selectableItemBackground"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_md"
+        tools:context=".view.add.AddNewNoteFragment">
 
         <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/add_new_note_title_hint"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:text="@={vm.title}"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/add_new_note_title_hint"
+                android:inputType="text"
+                android:maxLines="1"
+                android:text="@={vm.title}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_sm">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm">
 
             <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/add_new_note_description_hint"
-                    android:inputType="textMultiLine"
-                    android:text="@={vm.description}"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/add_new_note_description_hint"
+                android:inputType="textMultiLine"
+                android:text="@={vm.description}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_sm"
-                android:onClick="@{() -> vm.saveNote()}"
-                android:text="@string/add_new_note_save"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:onClick="@{() -> vm.saveNote()}"
+            android:text="@string/add_new_note_save" />
 
     </LinearLayout>
 </layout>
