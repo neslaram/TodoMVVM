@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TodoMVVM</string>
+    <string name="dashboard_add_notes">Add Notes</string>
+    <string name="add_new_note_save">Save</string>
+    <string name="add_new_note_title_hint">Title</string>
+    <string name="add_new_note_description_hint">Message</string>
+    <string name="add_new_note">New Note</string>
+    <string name="main">My Notes</string>
 </resources>

@@ -1,0 +1,46 @@
+//Libraries
+def constraintLayout = '1.1.3'
+def gson = '2.8.5'
+def koin = '2.0.0-rc-1'
+def legacySupport = '1.0.0'
+def lifecycle = '2.0.0'
+def material = '1.0.0'
+def navigation = '1.0.0'
+def support = '1.0.2'
+//Testing
+def jUnit = '4.12'
+def androidRunner = '1.3.0-alpha02'
+def espresso = '3.3.0-alpha02'
+
+ext {
+    //Android
+    buildToolsVersion = "29.0.2"
+    minSdkVersion = 21
+    targetSdkVersion = 29
+    compileSdkVersion = 29
+
+    appDependencies = [
+            appCompat            : "androidx.appcompat:appcompat:$support",
+            constraintLayout     : "androidx.constraintlayout:constraintlayout:$constraintLayout",
+            core                 : "androidx.core:core-ktx:$support",
+            gson                 : "com.google.code.gson:gson:$gson",
+            koinAndroid          : "org.koin:koin-android:$koin",
+            koinAndroidxScope    : "org.koin:koin-androidx-scope:$koin",
+            koinAndroidxViewmodel: "org.koin:koin-androidx-viewmodel:$koin",
+            kotlin               : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
+            legacySupport        : "androidx.legacy:legacy-support-v4:$legacySupport",
+            lifecycleCommonJava8 : "androidx.lifecycle:lifecycle-common-java8:$lifecycle",
+            lifecycleExtensions  : "androidx.lifecycle:lifecycle-extensions:$lifecycle",
+            material             : "com.google.android.material:material:$material",
+            navigationFragment   : "android.arch.navigation:navigation-fragment:$navigation",
+            navigationUI         : "android.arch.navigation:navigation-ui-ktx:$navigation"
+    ]
+
+    appTestDependencies = [
+            appcompat    : "androidx.appcompat:appcompat:$support",
+            junit        : "junit:junit:$jUnit",
+            androidRunner: "androidx.test:runner:$androidRunner",
+            espressoCore : "androidx.test.espresso:espresso-core:$espresso",
+            coreTesting  : "androidx.arch.core:core-testing:$lifecycle"
+    ]
+}
