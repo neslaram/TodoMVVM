@@ -1,5 +1,6 @@
 //Libraries
 def constraintLayout = '1.1.3'
+def dagger = '2.24'
 def gson = '2.8.5'
 def koin = '2.0.0-rc-1'
 def legacySupport = '1.0.0'
@@ -20,20 +21,22 @@ ext {
     compileSdkVersion = 29
 
     appDependencies = [
-            appCompat            : "androidx.appcompat:appcompat:$support",
-            constraintLayout     : "androidx.constraintlayout:constraintlayout:$constraintLayout",
-            core                 : "androidx.core:core-ktx:$support",
-            gson                 : "com.google.code.gson:gson:$gson",
-            koinAndroid          : "org.koin:koin-android:$koin",
-            koinAndroidxScope    : "org.koin:koin-androidx-scope:$koin",
-            koinAndroidxViewmodel: "org.koin:koin-androidx-viewmodel:$koin",
-            kotlin               : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
-            legacySupport        : "androidx.legacy:legacy-support-v4:$legacySupport",
-            lifecycleCommonJava8 : "androidx.lifecycle:lifecycle-common-java8:$lifecycle",
-            lifecycleExtensions  : "androidx.lifecycle:lifecycle-extensions:$lifecycle",
-            material             : "com.google.android.material:material:$material",
-            navigationFragment   : "android.arch.navigation:navigation-fragment:$navigation",
-            navigationUI         : "android.arch.navigation:navigation-ui-ktx:$navigation"
+            appCompat             : "androidx.appcompat:appcompat:$support",
+            constraintLayout      : "androidx.constraintlayout:constraintlayout:$constraintLayout",
+            core                  : "androidx.core:core-ktx:$support",
+            daggerAndroid         : "com.google.dagger:dagger-android:$dagger",
+            daggerAndroidSupport  : "com.google.dagger:dagger-android-support:$dagger",
+            daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$dagger",
+            gson                  : "com.google.code.gson:gson:$gson",
+            koinAndroid           : "org.koin:koin-android:$koin",
+            koinAndroidxScope     : "org.koin:koin-androidx-scope:$koin",
+            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
+            legacySupport         : "androidx.legacy:legacy-support-v4:$legacySupport",
+            lifecycleCommonJava8  : "androidx.lifecycle:lifecycle-common-java8:$lifecycle",
+            lifecycleExtensions   : "androidx.lifecycle:lifecycle-extensions:$lifecycle",
+            material              : "com.google.android.material:material:$material",
+            navigationFragment    : "android.arch.navigation:navigation-fragment:$navigation",
+            navigationUI          : "android.arch.navigation:navigation-ui-ktx:$navigation"
     ]
 
     appTestDependencies = [

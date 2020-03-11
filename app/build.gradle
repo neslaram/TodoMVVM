@@ -31,6 +31,9 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    kapt {
+        generateStubs true
+    }
 }
 
 dependencies {
@@ -39,10 +42,14 @@ dependencies {
     implementation appDependencies.appCompat
     implementation appDependencies.constraintLayout
     implementation appDependencies.core
+
+    implementation appDependencies.daggerAndroid
+    implementation appDependencies.daggerAndroidSupport
+    kapt appDependencies.daggerAndroidProcessor
+
     implementation appDependencies.gson
     implementation appDependencies.koinAndroid
     implementation appDependencies.koinAndroidxScope
-    implementation appDependencies.koinAndroidxViewmodel
     implementation appDependencies.kotlin
     implementation appDependencies.legacySupport
     implementation appDependencies.lifecycleCommonJava8
